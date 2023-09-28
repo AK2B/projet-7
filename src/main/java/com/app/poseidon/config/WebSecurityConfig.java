@@ -14,45 +14,41 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  *
  * @Configuration
  * @EnableWebSecurity
- */
-/*@Configuration
+*/
+@Configuration
 @EnableWebSecurity
-public class WebSecurityConfig {*/
+public class WebSecurityConfig {
+ 
+	/**
+	 * Defines a bean for password encoding.
+	 *
+	 * @return A BCryptPasswordEncoder bean.
+	 */
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-    /**
-     * Defines a bean for password encoding.
-     *
-     * @return A BCryptPasswordEncoder bean.
-     */
-    /*@Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }*/
+	/**
+	 * Configures security filter chains for different HTTP requests and
+	 * authentication methods.
+	 *
+	 * @param http The HttpSecurity object to configure security.
+	 * @return A SecurityFilterChain bean.
+	 * @throws Exception If an exception occurs during configuration.
+	 */
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-    /**
-     * Configures security filter chains for different HTTP requests and authentication methods.
-     *
-     * @param http The HttpSecurity object to configure security.
-     * @return A SecurityFilterChain bean.
-     * @throws Exception If an exception occurs during configuration.
-     */
-  /*  @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.authorizeHttpRequests((requests) -> requests.requestMatchers("/", "/home", "/js/**", "/css/**")
+				.permitAll()
+				.requestMatchers("/bidList/**", "/curvePoint/**", "/rating/**", "/ruleName/**", "/trade/**", "/user/**")
+				.authenticated().anyRequest().permitAll())
+				.formLogin((form) -> form.loginPage("/login").permitAll())
+				.logout((logout) -> logout.permitAll());
 
-        http.authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/", "/home", "/js/**", "/css/**")
-                .permitAll()
-                .requestMatchers("/bidList/**", "/curvePoint/**", "/rating/**", "/ruleName/**", "/trade/**", "/user/**")
-                .authenticated()
-                .anyRequest()
-                .permitAll())
-                .logout((logout) -> logout
-                        .permitAll());
-                
+		http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 
-        http.csrf()
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-
-        return http.build();
-    }
-}*/
+		return http.build();
+	}
+}

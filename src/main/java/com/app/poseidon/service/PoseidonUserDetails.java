@@ -19,33 +19,33 @@ import com.app.poseidon.repositories.UserRepository;
  *
  * @Service
  */
-/*@Service
+@Service
 public class PoseidonUserDetails implements UserDetailsService {
 
     @Autowired
     UserRepository userRepository;
 
     /**
-     * Loads user details by username (email) from the database.
+     * Loads user details by username from the database.
      *
      * @param username of the user.
      * @return UserDetails representing the user.
      * @throws UsernameNotFoundException if the user is not found in the database.
-     */
-   /*   @Override
+    */ 
+  @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        String Username, password = null;
+        String userName, password = null;
 
         List<GrantedAuthority> authorities = null;
         com.app.poseidon.domain.User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User details not found for the user : " + username);
         } else {
-        	Username = user.getUsername();
+        	userName = user.getUsername();
             password = user.getPassword();
             authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority(user.getRole()));
         }
         return new User(username, password, authorities);
     }
-}*/
+}

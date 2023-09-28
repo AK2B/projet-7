@@ -18,7 +18,7 @@
 		</div>
 		<div class="col-6 text-right">
 				<div>Authenticated as <span th:text="${principal.principal.username}"></span></div>
-			<form th:action="@{/app-logout}" method="POST">
+			<form th:action="@{/logout}" method="POST">
 				<input type="submit" value="Logout"/>
 			</form>
 		</div>

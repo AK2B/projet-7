@@ -43,8 +43,9 @@ public class Trade {
 	
 	
 	
-	public Trade(String string, String string2) {
-		// TODO Auto-generated constructor stub
+	public Trade(String account, String type) {
+		this.account = account;
+		this.type = type;
 	}
 
 

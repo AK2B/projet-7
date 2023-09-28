@@ -19,5 +19,8 @@ public class HomeController
 		return "redirect:/bidList/list";
 	}
 
-
+	@RequestMapping("/login")
+	public String getLogin() {
+		return "login";
+	}
 }
