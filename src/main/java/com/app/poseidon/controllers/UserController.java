@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.app.poseidon.config.CustomPasswordValidator;
 import com.app.poseidon.domain.User;
 import com.app.poseidon.repositories.UserRepository;
 
@@ -19,6 +20,10 @@ import jakarta.validation.Valid;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private CustomPasswordValidator customPasswordValidator;
+
 
     @RequestMapping("/user/list")
     public String home(Model model)
@@ -34,14 +39,20 @@ public class UserController {
 
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
-        if (!result.hasErrors()) {
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            user.setPassword(encoder.encode(user.getPassword()));
-            userRepository.save(user);
-            model.addAttribute("users", userRepository.findAll());
-            return "redirect:/user/list";
-        }
-        return "user/add";
+    	 if (result.hasErrors()) {
+    	        return "user/add";
+    	    }
+
+    	    if (!customPasswordValidator.validatePassword(user.getPassword())) {
+    	        result.rejectValue("password", "password.invalid", "Le mot de passe ne respecte pas les critères de validation.");
+    	        return "user/add";
+    	    }
+
+    	    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    	    user.setPassword(encoder.encode(user.getPassword()));
+    	    userRepository.save(user);
+    	    model.addAttribute("users", userRepository.findAll());
+    	    return "redirect:/user/list";
     }
 
     @GetMapping("/user/update/{id}")
@@ -55,7 +66,12 @@ public class UserController {
     @PostMapping("/user/update/{id}")
     public String updateUser(@PathVariable("id") Integer id, @Valid User user,
                              BindingResult result, Model model) {
-        if (result.hasErrors()) {
+    	if (result.hasErrors()) {
+            return "user/update";
+        }
+
+        if (!customPasswordValidator.validatePassword(user.getPassword())) {
+            result.rejectValue("password", "password.invalid", "Le mot de passe ne respecte pas les critères de validation.");
             return "user/update";
         }
 

@@ -29,6 +29,7 @@ public class WebSecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 
+	
 	/**
 	 * Configures security filter chains for different HTTP requests and
 	 * authentication methods.
