@@ -1,7 +1,6 @@
 package com.app.poseidon.springboot;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.Assert;
 import org.junit.Test;

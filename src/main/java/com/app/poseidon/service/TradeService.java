@@ -26,7 +26,7 @@ public class TradeService {
 	}
 
 	public Trade getTradeById(Integer tradeId) {
-		return tradeRepository.getById(tradeId);
+		return tradeRepository.getReferenceById(tradeId);
 	}
 
 	public Trade updateTrade(Integer id, @Valid Trade trade) {

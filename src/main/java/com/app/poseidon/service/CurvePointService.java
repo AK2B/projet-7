@@ -26,7 +26,7 @@ public class CurvePointService {
 	}
 
 	public CurvePoint getCurvePointById(Integer id) {
-		return curvePointRepository.getById(id);
+		return curvePointRepository.getReferenceById(id);
 	}
 
 	public CurvePoint updatecurvePoint(Integer id, @Valid CurvePoint curvePoint) {

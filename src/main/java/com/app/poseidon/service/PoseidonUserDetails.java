@@ -34,14 +34,14 @@ public class PoseidonUserDetails implements UserDetailsService {
     */ 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        String userName, password = null;
+        String password = null;
 
         List<GrantedAuthority> authorities = null;
         com.app.poseidon.domain.User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User details not found for the user : " + username);
         } else {
-        	userName = user.getUsername();
+        	
             password = user.getPassword();
             authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority(user.getRole()));

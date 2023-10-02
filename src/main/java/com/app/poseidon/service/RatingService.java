@@ -26,7 +26,7 @@ public class RatingService {
 	}
 
 	public Rating getRatingById(Integer id) {
-		return ratingRepository.getById(id);
+		return ratingRepository.getReferenceById(id);
 	}
 
 	public Rating updateRating(Integer id, @Valid Rating rating) {

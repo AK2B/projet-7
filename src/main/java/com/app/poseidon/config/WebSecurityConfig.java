@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
  * Configuration class for setting up web security in the application.
@@ -47,8 +46,6 @@ public class WebSecurityConfig {
 				.authenticated().anyRequest().permitAll())
 				.formLogin((form) -> form.loginPage("/login").permitAll())
 				.logout((logout) -> logout.permitAll());
-
-		http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 
 		return http.build();
 	}

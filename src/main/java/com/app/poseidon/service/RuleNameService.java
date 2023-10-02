@@ -26,7 +26,7 @@ public class RuleNameService {
 	}
 
 	public RuleName getRuleNameById(Integer id) {
-		return ruleNameRepository.getById(id);
+		return ruleNameRepository.getReferenceById(id);
 	}
 
 	public RuleName updateRuleName(Integer id, @Valid RuleName ruleName) {

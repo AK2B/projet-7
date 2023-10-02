@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.app.poseidon.domain.BidList;
 import com.app.poseidon.domain.Rating;
 import com.app.poseidon.service.RatingService;
 
