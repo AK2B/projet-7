@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,10 +23,19 @@ public class Trade {
     private	Integer tradeId;
 	private	String account;
 	private	String type;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private	Double buyQuantity;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private	Double sellQuantity;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private	Double buyPrice;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private	Double sellPrice;
+	
 	private	String benchmark;
 	private	Timestamp tradeDate;
 	private	String security;

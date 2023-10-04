@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,10 +25,19 @@ public class BidList {
 	
 	private String account;
 	private String type;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private Double bidQuantity;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private Double askQuantity;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private Double bid;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private Double ask;
+	
 	private String benchmark;
 	private Timestamp bidListDate;
 	private String commentary;

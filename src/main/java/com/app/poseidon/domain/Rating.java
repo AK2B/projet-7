@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,6 +23,8 @@ public class Rating {
 	private String moodysRating;
 	private String sandPRating;
 	private String fitchRating;
+	
+	@Positive(message = "Doit être un nombre positif.")
 	private Integer orderNumber;
 	
 	public Rating(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
