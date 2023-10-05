@@ -40,7 +40,7 @@ public class WebSecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-		http.authorizeHttpRequests((requests) -> requests.requestMatchers("/", "/css/**")
+		http.authorizeHttpRequests((requests) -> requests.requestMatchers("/", "/css/**", "/user/**")
 				.permitAll()
 				.anyRequest().authenticated())
 				.formLogin((form) -> form.loginPage("/login").defaultSuccessUrl("/bidList/list").permitAll())

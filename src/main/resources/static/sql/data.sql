@@ -103,7 +103,6 @@ CREATE TABLE Users (
 
 insert into Users(fullname, username, password, role) 
 values("Administrator", "admin", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "ADMIN"),
-("User", "user", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "USER"),
-("poseidon", "poseidon", "$2a$10$BygWKqa1O7RWjJTYiEUAauMCN05DgFKdJeJALGSjAo9Uh9rPhIHWK", "USER");
+("User", "user", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "USER");
 
 
