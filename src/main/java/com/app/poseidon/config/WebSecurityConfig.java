@@ -40,11 +40,10 @@ public class WebSecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-		http.authorizeHttpRequests((requests) -> requests.requestMatchers("/", "/home", "/js/**", "/css/**")
+		http.authorizeHttpRequests((requests) -> requests.requestMatchers("/", "/css/**")
 				.permitAll()
-				.requestMatchers("/bidList/**", "/curvePoint/**", "/rating/**", "/ruleName/**", "/trade/**", "/user/**")
-				.authenticated().anyRequest().permitAll())
-				.formLogin((form) -> form.loginPage("/login").permitAll())
+				.anyRequest().authenticated())
+				.formLogin((form) -> form.loginPage("/login").defaultSuccessUrl("/bidList/list").permitAll())
 				.logout((logout) -> logout.permitAll());
 
 		return http.build();

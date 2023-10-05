@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,10 +22,17 @@ public class Rating {
 	@Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private String moodysRating;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private String sandPRating;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private String fitchRating;
 	
+	@NotNull(message = "Le champ ne peut pas être null.")
 	@Positive(message = "Doit être un nombre positif.")
 	private Integer orderNumber;
 	

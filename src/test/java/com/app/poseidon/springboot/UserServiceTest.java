@@ -12,8 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.app.poseidon.config.CustomPasswordValidator;
 import com.app.poseidon.service.UserService;
+import com.app.poseidon.validator.CustomPasswordValidator;
 
 public class UserServiceTest {
 

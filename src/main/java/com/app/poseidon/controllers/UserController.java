@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.app.poseidon.config.CustomPasswordValidator;
 import com.app.poseidon.domain.User;
 import com.app.poseidon.repositories.UserRepository;
+import com.app.poseidon.validator.CustomPasswordValidator;
 
 import jakarta.validation.Valid;
 

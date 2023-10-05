@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,11 +19,22 @@ public class RuleName {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private	Integer id;
 	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private	String name;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private	String description;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private	String json;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private	String template;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private	String sqlStr;
+	
+	@NotBlank(message = "Le champ ne peut pas être null.")
 	private	String sqlPart;
 	
 	public RuleName() {

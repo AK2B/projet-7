@@ -1,4 +1,4 @@
-package com.app.poseidon.config;
+package com.app.poseidon.validator;
 
 import org.springframework.stereotype.Component;
 

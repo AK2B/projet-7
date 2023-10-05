@@ -3,7 +3,7 @@ package com.app.poseidon.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.poseidon.config.CustomPasswordValidator;
+import com.app.poseidon.validator.CustomPasswordValidator;
 
 @Service
 public class UserService {

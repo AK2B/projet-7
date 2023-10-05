@@ -16,8 +16,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.app.poseidon.config.PoseidonUserDetails;
 import com.app.poseidon.repositories.UserRepository;
-import com.app.poseidon.service.PoseidonUserDetails;
 
 @SpringBootTest
 public class PoseidonUserDetailsTest {
