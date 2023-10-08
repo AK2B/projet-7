@@ -1,12 +1,13 @@
-# Projet 7 - Poseïdon
+# Projet 7 - Poseïdon  
+
+L'entreprise est un agrégateur financier qui utilise différents outils du marché pour son fonctionnement.    
+Son but est d'alimenter le système avec des entités de base qui serviront à générer des transactions financières.
 
 ### Login test  
 
-Create user -> Lien [ User ](http://localhost:8080/user/list)  
+Username : poseidon  
 
-Click : Add New
-
-Password (At least one uppercase letter, at least 8 characters, at least one digit, and one symbol)
+Password : Projet@2023
 
 #### Sql
-Lien [ sql ](https://github.com/AK2B/projet-7/blob/main/src/main/resources/static/sql/data.sql)
+Lien : [ fichier sql ](https://github.com/AK2B/projet-7/blob/main/src/main/resources/static/sql/data.sql)

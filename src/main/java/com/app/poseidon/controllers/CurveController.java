@@ -39,18 +39,18 @@ public class CurveController {
     }
 
     @GetMapping("/curvePoint/add")
-    public String addBidForm(CurvePoint curvePoint) {
+    public String addBidForm(CurvePoint curve) {
         return "curvePoint/add";
     }
 
     @PostMapping("/curvePoint/validate")
-    public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
+    public String validate(@Valid CurvePoint curve, BindingResult result, Model model) {
         // TODO: check data valid and save to db, after saving return Curve list
     	if (result.hasErrors()) {
 	        return "curvePoint/add"; 
 	    }
 
-    	curvePointService.savecurvePoint(curvePoint);
+    	curvePointService.savecurvePoint(curve);
     	
         return "redirect:/curvePoint/list";
     }

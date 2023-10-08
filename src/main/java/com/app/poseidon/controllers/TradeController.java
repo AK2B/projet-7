@@ -39,7 +39,7 @@ public class TradeController {
     }
 
     @GetMapping("/trade/add")
-    public String addUser(Trade bid) {
+    public String addUser(Trade trade) {
         return "trade/add";
     }
 
@@ -59,8 +59,7 @@ public class TradeController {
     @GetMapping("/trade/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get Trade by Id and to model then show to the form
-    	int tradeId = id;
-    	Trade trade = tradeService.getTradeById(tradeId);
+    	Trade trade = tradeService.getTradeById(id);
 	    model.addAttribute("trade", trade);
     	
         return "trade/update";

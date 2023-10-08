@@ -60,7 +60,6 @@ CREATE TABLE Trade (
 
 CREATE TABLE CurvePoint (
   Id tinyint(4) NOT NULL AUTO_INCREMENT,
-  CurveId tinyint,
   asOfDate TIMESTAMP,
   term DOUBLE ,
   value DOUBLE ,
@@ -103,6 +102,7 @@ CREATE TABLE Users (
 
 insert into Users(fullname, username, password, role) 
 values("Administrator", "admin", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "ADMIN"),
-("User", "user", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "USER");
+("User", "user", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "USER"),
+("Poseidon", "poseidon", "$2a$10$cr95FUpaP8jc1WcBkypN9.ClqxilMvhRVp.IiNljkT4h9goraynW.", "USER");
 
 

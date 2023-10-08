@@ -35,18 +35,9 @@ public class BidList {
 	@Positive(message = "Doit être un nombre positif.")
 	private Double bidQuantity;
 	
-	@NotNull(message = "Le champ ne peut pas être null.")
-	@Positive(message = "Doit être un nombre positif.")
 	private Double askQuantity;
-	
-	@NotNull(message = "Le champ ne peut pas être null.")
-	@Positive(message = "Doit être un nombre positif.")
 	private Double bid;
-	
-	@NotNull(message = "Le champ ne peut pas être null.")
-	@Positive(message = "Doit être un nombre positif.")
 	private Double ask;
-	
 	private String benchmark;
 	private Timestamp bidListDate;
 	private String commentary;

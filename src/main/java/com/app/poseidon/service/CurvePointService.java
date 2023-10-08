@@ -20,8 +20,8 @@ public class CurvePointService {
 		return curvePointRepository.findAll();
 	}
 
-	public CurvePoint savecurvePoint(@Valid CurvePoint curvePoint) {
-		return curvePointRepository.save(curvePoint);
+	public CurvePoint savecurvePoint(@Valid CurvePoint curve) {
+		return curvePointRepository.save(curve);
 		
 	}
 

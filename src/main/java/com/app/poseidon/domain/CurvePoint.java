@@ -19,12 +19,8 @@ import lombok.Setter;
 public class CurvePoint {
 	
 	@Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO )
     private	Integer id;
-	
-	@NotNull(message = "Le champ ne peut pas être null.")
-	@Positive(message = "Doit être un nombre positif.")
-	private Integer curveId;
 	
 	private Timestamp asOfDate;
 	
@@ -39,9 +35,7 @@ public class CurvePoint {
 	private Timestamp creationDate;
 	
 	
-	public CurvePoint(Integer curveId, Double term, Double value) {
-		super();
-		this.curveId = curveId;
+	public CurvePoint(Double term, Double value) {
 		this.term = term;
 		this.value = value;
 	}

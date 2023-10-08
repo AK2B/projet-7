@@ -34,18 +34,10 @@ public class Trade {
 	@Positive(message = "Doit être un nombre positif.")
 	private	Double buyQuantity;
 	
-	@NotNull(message = "Le champ ne peut pas être null.")
-	@Positive(message = "Doit être un nombre positif.")
-	private	Double sellQuantity;
 	
-	@NotNull(message = "Le champ ne peut pas être null.")
-	@Positive(message = "Doit être un nombre positif.")
-	private	Double buyPrice;
-	
-	@NotNull(message = "Le champ ne peut pas être null.")
-	@Positive(message = "Doit être un nombre positif.")
-	private	Double sellPrice;
-	
+	private	Double sellQuantity;	
+	private	Double buyPrice;	
+	private	Double sellPrice;	
 	private	String benchmark;
 	private	Timestamp tradeDate;
 	private	String security;
@@ -62,13 +54,11 @@ public class Trade {
 	private	String side;
 	
 	
-	
-	public Trade(String account, String type) {
+	public Trade(String account, String type, Double buyQuantity) {
 		this.account = account;
 		this.type = type;
+		this.buyQuantity = buyQuantity;
 	}
-
-
 
 	public Trade() {
 		super();
